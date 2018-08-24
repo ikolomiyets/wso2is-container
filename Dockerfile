@@ -4,6 +4,8 @@ RUN ["mkdir", "-p", "/opt/wso2"]
 RUN set -x \
 	&& addgroup -g 1000 -S wso2 \
 	&& adduser -u 1000 -D -S -G wso2 wso2 \
+	&& mkdir /etc/.java \
+	&& touch /etc/.java/.systemPrefs \
 	&& chown -R wso2:wso2 /etc/.java/.systemPrefs
 
 RUN ["chown", "-R", "wso2:wso2", "/opt/wso2"]
