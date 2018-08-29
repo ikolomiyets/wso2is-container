@@ -18,6 +18,7 @@ RUN cd /opt/wso2 \
 	&& rm wso2is-5.6.0.zip \
 	&& ln -s /opt/wso2/wso2is-5.6.0 /opt/wso2/is
 
+ADD https://s3-eu-west-1.amazonaws.com/misc.isollab.com/dl/postgresql-42.2.4.jar /opt/wso2/is/lib/
 
 WORKDIR /opt/wso2/is
 
