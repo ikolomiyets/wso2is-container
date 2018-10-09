@@ -18,10 +18,11 @@ RUN cd /opt/wso2 \
 	&& rm wso2is-5.6.0.zip \
 	&& ln -s /opt/wso2/wso2is-5.6.0 /opt/wso2/is
 
-ADD https://s3-eu-west-1.amazonaws.com/misc.isollab.com/dl/postgresql-42.2.4.jar /opt/wso2/is/lib/
+ADD https://s3-eu-west-1.amazonaws.com/misc.isollab.com/dl/postgresql-42.2.4.jar /opt/wso2/wso2is-5.6.0/repository/components/dropins/
 
 USER root
-RUN chown wso2:wso2 /opt/wso2/is/lib/postgresql-42.2.4.jar && chmod 644 /opt/wso2/is/lib/postgresql-42.2.4.jar
+RUN chown wso2:wso2 /opt/wso2/wso2is-5.6.0/repository/components/dropins/postgresql-42.2.4.jar && chmod 644 /opt/wso2/wso2is-5.6.0/repository/components/dropins/postgresql-42.2.4.jar
+
 USER wso2
 
 WORKDIR /opt/wso2/is
