@@ -20,6 +20,10 @@ RUN cd /opt/wso2 \
 
 ADD https://s3-eu-west-1.amazonaws.com/misc.isollab.com/dl/postgresql-42.2.4.jar /opt/wso2/is/lib/
 
+USER root
+RUN chown wso2:wso2 /opt/wso2/is/lib/postgresql-42.2.4.jar && chmod 644 /opt/wso2/is/lib/postgresql-42.2.4.jar
+USER wso2
+
 WORKDIR /opt/wso2/is
 
 CMD ["/opt/wso2/is/bin/wso2server.sh"]
