@@ -1,5 +1,8 @@
 FROM openjdk:alpine
 
+RUN apk update && \
+    apk upgrade
+
 RUN ["mkdir", "-p", "/opt/wso2"]
 RUN set -x \
 	&& addgroup -g 1000 -S wso2 \
