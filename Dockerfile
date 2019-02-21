@@ -1,4 +1,4 @@
-FROM openjdk:alpine
+FROM openjdk:8u191-alpine
 
 RUN apk update && \
     apk upgrade
